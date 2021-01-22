@@ -1,0 +1,11 @@
+FROM		alpine:latest
+
+RUN			apk update && apk add nginx
+
+COPY		srcs ./root/
+
+WORKDIR		/root/
+
+EXPOSE		80 443
+
+ENTRYPOINT	["sh", "setup_container.sh"]
