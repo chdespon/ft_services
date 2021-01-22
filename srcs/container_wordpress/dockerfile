@@ -4,7 +4,15 @@ RUN			apk update && apk add	nginx \
 									wget \
 									php7-fpm \
 									php7-mysqli \
-									php7-json 
+									php7-json \
+									php7-cli \
+									php7-cgi \
+									php7-mbstring \
+									php7-opcache \
+									php7-gd \
+									php7-session \
+									php7-zlib
+
 COPY		srcs ./root/
 
 WORKDIR		/root/

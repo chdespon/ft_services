@@ -7,6 +7,7 @@ mkdir /run/nginx
 /usr/sbin/php-fpm7
 
 #Installing and configuring WordPress
+
 mkdir -p /usr/share/webapps/
 cd /usr/share/webapps/
 wget http://wordpress.org/latest.tar.gz
