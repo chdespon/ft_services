@@ -1,0 +1,9 @@
+FROM		alpine:latest
+
+RUN			apk update && apk add
+
+COPY		srcs ./root/
+
+WORKDIR		/root/
+
+ENTRYPOINT	["sh", "setup_container.sh"]
