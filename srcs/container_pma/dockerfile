@@ -1,6 +1,6 @@
 FROM		alpine:latest
 
-RUN			apk update && apk add nginx \
+RUN			apk update && apk add	nginx \
 									wget \
 									php7-fpm \
 									php7-mysqli \

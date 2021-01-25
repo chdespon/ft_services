@@ -1,6 +1,7 @@
 FROM		alpine:latest
 
-RUN			apk update && apk add
+RUN			apk update && apk add 	mysql \
+									mysql-client
 
 COPY		srcs ./root/
 
