@@ -4,11 +4,10 @@ metadata:
   name: wordpress
   annotations:
     metallb.universe.tf/allow-shared-ip: sik
-  labels:
-    app: wordpress
 spec:
   ports:
     - port: 5050
+      targetPort: 5050
   selector:
     app: wordpress
   type: LoadBalancer
@@ -20,11 +19,10 @@ metadata:
   labels:
     app: wordpress
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: wordpress
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
@@ -33,6 +31,7 @@ spec:
       containers:
       - image: wordpress
         name: wordpress
+        imagePullPolicy: Never
         ports:
         - containerPort: 5050
           name: wordpress
