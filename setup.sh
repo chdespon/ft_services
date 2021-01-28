@@ -1,14 +1,19 @@
 #!/bin/sh
 
+
+if [ $(minikube status | grep -c Running) != 3 ]
+then
+minikube start --driver=docker
+else  
 sh srcs/scripts/delete_services.sh
+fi
+
+docker kill $(docker ps -q)
 
 # sudo groupadd docker
 
 # sudo usermod -aG docker $USER
 
-minikube delete
-
-minikube start --driver=docker 
 
 # --cpus=2 --memory=2200MB --extra-config=apiserver.service-node-port-range=1-35000
 
@@ -18,7 +23,7 @@ kubectl cluster-info
 
 kubectl get nodes
 
-eval $(minikube docker-env)
+eval $(minikube -p minikube docker-env)
 
 sh srcs/scripts/build_containers.sh
 
