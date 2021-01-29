@@ -16,5 +16,7 @@ rm phpMyAdmin-5.0.2-all-languages.tar.gz
 mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 chmod -R 777 /usr/share/webapps/
 ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
+cd
+mv config.inc.php /usr/share/webapps/phpmyadmin
 
 nginx -g "daemon off;"

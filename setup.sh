@@ -4,11 +4,15 @@
 if [ $(minikube status | grep -c Running) != 3 ]
 then
 minikube start --driver=docker
-else  
-sh srcs/scripts/delete_services.sh
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+kubectl apply -f srcs/scripts/metallb.yaml
 fi
+sh srcs/scripts/delete_services.sh
 
-docker kill $(docker ps -q)
+
+# docker kill $(docker ps -q)
 
 # sudo groupadd docker
 
@@ -16,12 +20,6 @@ docker kill $(docker ps -q)
 
 
 # --cpus=2 --memory=2200MB --extra-config=apiserver.service-node-port-range=1-35000
-
-kubectl version
-
-kubectl cluster-info
-
-kubectl get nodes
 
 eval $(minikube -p minikube docker-env)
 
