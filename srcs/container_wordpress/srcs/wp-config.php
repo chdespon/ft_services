@@ -23,16 +23,16 @@
 define( 'DB_NAME', 'wordpress' );
 
 /** MySQL database username */
-define( 'DB_USER', 'user' );
+define( 'DB_USER', 'admin' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'password' );
+define( 'DB_PASSWORD', 'admin' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'mysql' );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
+define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
@@ -46,14 +46,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define( 'AUTH_KEY',         'sFDhyz>7ur~-y?Uw`:]4AsRj[#6_dWP2@bkNOL:Fi_IoRPXUKE`2%,t09]fABQ:[' );
+define( 'SECURE_AUTH_KEY',  '<~&oxuoV+ltT/sir)6Z#AjI8vR`TJ3,xDTaOv>q&M} <?FP3PvuWg1+X]m=LD-kt' );
+define( 'LOGGED_IN_KEY',    '(#,eLu5mF>*W:y-U?=.LiN[>emaAUNYMUJMjeOH4tXTM|?q+tEXnBjhA`fw3+GW1' );
+define( 'NONCE_KEY',        '+Q{9/NNo-|/of2BBeUI]@jb-?g#$TV`;F}*yP}Xoh+Cs.]4)Cx0UtrVq/(b{Ns3}' );
+define( 'AUTH_SALT',        'oF@+i&B sx#B$Nm3Z @(`g7v&R-zsXwnM,hzRCF2*6m*!n`?NlJUnuVr;a^D.+^Q' );
+define( 'SECURE_AUTH_SALT', 'Z+<0Uza3aXjVTbpb!gl%%J$c[:T8#HQSMy*FHLWO*MO3Q/<?w(8@/T{?U]1iBP>K' );
+define( 'LOGGED_IN_SALT',   'ZN1R%||lR+P*MHU:1:~.Vr;xgee/;gwtK3dkxij|$R$#m2TzNm;P5pN/D!,a<zm,' );
+define( 'NONCE_SALT',       '}*uz4Hoo88dR?&_bE8(Q]>M5Y.,^ZpMU%MB!xCA;z+S48M&b/=XQq%77Wy3NWU4a' );
 
 /**#@-*/
 
@@ -78,8 +78,7 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', false );
-define('CONCATENATE_SCRIPTS', false);
-define('SCRIPT_DEBUG', true);
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */

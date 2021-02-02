@@ -13,6 +13,7 @@ cd /usr/share/webapps/
 wget http://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
 rm latest.tar.gz
+chmod -R 777 /usr/share/webapps/
 ln -s /usr/share/webapps/wordpress/ /var/www/localhost/htdocs/wordpress
 cd
 mv /root/wp-config.php /var/www/localhost/htdocs/wordpress
