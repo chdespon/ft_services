@@ -1,5 +1,9 @@
 #!/bin/sh
-
+if [ $(grep "docker" /etc/group | grep -c $USER ) = 0 ]
+then
+sudo usermod -aG docker $USER
+shutdown -r now
+fi
 # sudo groupadd docker
 
 # sudo usermod -aG docker $USER
@@ -15,8 +19,6 @@ fi
 sh srcs/scripts/delete_services.sh
 
 # docker kill $(docker ps -q)
-
-# --cpus=2 --memory=2200MB --extra-config=apiserver.service-node-port-range=1-35000
 
 eval $(minikube -p minikube docker-env)
 

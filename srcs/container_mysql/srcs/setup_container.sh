@@ -9,4 +9,4 @@ mysql_install_db --user=root --datadir=/var/lib/mysql
 
 mysqld --init_file=/init.sql
 
-mysql -u root wordpress < wordpress.sql
+# mysql -u root wordpress < wordpress.sql
