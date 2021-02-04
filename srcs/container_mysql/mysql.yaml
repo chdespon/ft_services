@@ -2,8 +2,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
-  annotations:
-    metallb.universe.tf/allow-shared-ip: sik
 spec:
   type: ClusterIP
   selector:
@@ -54,7 +52,7 @@ spec:
         ports:
         - containerPort: 3306
           name: mysql
-        volumeMounts:      
+        volumeMounts:
         - mountPath: /var/lib/mysql
           name: mysql-pv-claim
           subPath: mysql
