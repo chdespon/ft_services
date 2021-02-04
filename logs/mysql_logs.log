@@ -1,17 +1,18 @@
-Sending build context to Docker daemon  45.06kB
+Sending build context to Docker daemon  46.59kB
 Step 1/5 : FROM		alpine:latest
  ---> e50c909a8df2
 Step 2/5 : RUN			apk update && apk add 	mysql 									mysql-client
  ---> Using cache
  ---> 99023a7f4553
 Step 3/5 : COPY		srcs ./root/
- ---> Using cache
- ---> 5bf49275e57c
+ ---> 495d521433a9
 Step 4/5 : WORKDIR		/root/
- ---> Using cache
- ---> 0a410a17fc3f
+ ---> Running in 3253f493295a
+Removing intermediate container 3253f493295a
+ ---> 1bba138571cd
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> fc7e9f123f6e
-Successfully built fc7e9f123f6e
+ ---> Running in 7e5a5bc1975b
+Removing intermediate container 7e5a5bc1975b
+ ---> 42f77b35d575
+Successfully built 42f77b35d575
 Successfully tagged mysql:latest
