@@ -1,12 +1,25 @@
 #!/bin/sh
 
-mkdir -p /run/mysql
-
 mv init.sql /init.sql
 mv my.cnf /etc/my.cnf
 
-mysql_install_db --user=root --datadir=/var/lib/mysql
+mkdir -p /run/mysqld
 
-mysqld --init_file=/init.sql
+mysql_install_db
+mysqld &
 
-# mysql -u root wordpress < wordpress.sql
+MYSQLD_IS_UP=0
+while [ $MYSQLD_IS_UP == 0 ]
+do
+	sleep 5
+	ps aux | grep -v "grep" | grep "mysqld"
+	if [ $? == 0 ]
+	then
+		MYSQLD_IS_UP=1
+		mysql --password=password wordpress < wordpress.sql
+	fi
+done
+
+pkill mysqld
+
+mysqld
