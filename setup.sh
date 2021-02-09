@@ -1,4 +1,5 @@
 #!/bin/sh
+
 BLUE="\e[1;34m"
 GREEN="\e[1;32m"
 WHITE="\e[0m"
