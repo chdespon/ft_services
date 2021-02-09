@@ -4,3 +4,4 @@ kubectl apply -f srcs/container_wordpress/wordpress.yaml
 kubectl apply -f srcs/container_nginx/nginx.yaml
 kubectl apply -f srcs/container_pma/pma.yaml
 kubectl apply -f srcs/container_mysql/mysql.yaml
+kubectl apply -f srcs/container_FTPS/FTPS.yaml
