@@ -1,0 +1,22 @@
+Sending build context to Docker daemon   5.12kB
+Step 1/6 : FROM		alpine:latest
+ ---> e50c909a8df2
+Step 2/6 : RUN			apk update && apk add	build-base
+ ---> Using cache
+ ---> e173c432f3cc
+Step 3/6 : COPY		srcs ./root/
+ ---> ab6d95dc0336
+Step 4/6 : WORKDIR		/root/
+ ---> Running in 1577db493e85
+Removing intermediate container 1577db493e85
+ ---> b368b1f3dd84
+Step 5/6 : EXPOSE		21 1024
+ ---> Running in f5a13e034d52
+Removing intermediate container f5a13e034d52
+ ---> d7a1a3a8960f
+Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
+ ---> Running in e66b5d9e9775
+Removing intermediate container e66b5d9e9775
+ ---> bf82f13c2b42
+Successfully built bf82f13c2b42
+Successfully tagged ftps:latest

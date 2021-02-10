@@ -1,6 +1,6 @@
 FROM		alpine:latest
 
-RUN			apk update && add pure-ftpd --repository http://dl-3.alpinelinux.org/alpine/edge/testing/
+RUN			apk update && apk add	build-base
 
 COPY		srcs ./root/
 
@@ -8,4 +8,4 @@ WORKDIR		/root/
 
 EXPOSE		21 1024
 
-ENTRYPOINT	["sh", "setup_FTPS.sh"]
+ENTRYPOINT	["sh", "setup_container.sh"]
