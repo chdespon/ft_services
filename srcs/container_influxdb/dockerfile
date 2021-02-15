@@ -1,0 +1,12 @@
+FROM		alpine:latest
+
+RUN			apk update && apk	add influxdb \
+								ca-certificates
+
+COPY		srcs ./root
+
+WORKDIR		/root/
+
+EXPOSE		8086
+
+ENTRYPOINT	["sh", "setup_container.sh"]

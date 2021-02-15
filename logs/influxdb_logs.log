@@ -1,0 +1,20 @@
+Sending build context to Docker daemon   5.12kB
+Step 1/6 : FROM		alpine:latest
+ ---> e50c909a8df2
+Step 2/6 : RUN			apk update && apk	add influxdb 								ca-certificates
+ ---> Using cache
+ ---> 7a079e752f76
+Step 3/6 : COPY		srcs ./root
+ ---> Using cache
+ ---> 0fe005b7a549
+Step 4/6 : WORKDIR		/root/
+ ---> Using cache
+ ---> cb160791f163
+Step 5/6 : EXPOSE		8086
+ ---> Using cache
+ ---> 6397affab16b
+Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
+ ---> Using cache
+ ---> e1df8a3fd460
+Successfully built e1df8a3fd460
+Successfully tagged influxdb:latest

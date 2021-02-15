@@ -6,3 +6,4 @@ docker build ./srcs/container_pma/ -t phpmyadmin > ~/ft_services/logs/pma_logs.l
 docker build ./srcs/container_mysql/ -t mysql > ~/ft_services/logs/mysql_logs.log
 docker build ./srcs/container_FTPS/ -t ftps > ~/ft_services/logs/ftps_logs.log
 docker build ./srcs/container_grafana/ -t grafana > ~/ft_services/logs/grafana_logs.log
+docker build ./srcs/container_influxdb/ -t influxdb > ~/ft_services/logs/influxdb_logs.log
