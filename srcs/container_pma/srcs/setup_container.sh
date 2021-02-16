@@ -1,5 +1,7 @@
 #! /bin/sh
 
+telegraf --config telegraf.conf &
+
 cp	nginx.conf /etc/nginx/
 
 mkdir /run/nginx

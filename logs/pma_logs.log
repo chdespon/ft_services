@@ -1,20 +1,22 @@
-Sending build context to Docker daemon   12.8kB
+Sending build context to Docker daemon  294.4kB
 Step 1/6 : FROM		alpine:latest
  ---> e50c909a8df2
-Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib 									php7-common 									php7-iconv 									php7-curl 									php7-xml 									php7-imap 									fcgi 									php7-pdo 									php7-pdo_mysql 									php7-soap 									php7-xmlrpc 									php7-posix 									php7-mcrypt 									php7-gettext 									php7-ldap 									php7-ctype 									php7-dom
+Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib 									php7-common 									php7-iconv 									php7-curl 									php7-xml 									php7-imap 									fcgi 									php7-pdo 									php7-pdo_mysql 									php7-soap 									php7-xmlrpc 									php7-posix 									php7-mcrypt 									php7-gettext 									php7-ldap 									php7-ctype 									php7-dom 									telegraf
  ---> Using cache
- ---> b6c0e0f15f3e
+ ---> 9d66ec2e669a
 Step 3/6 : COPY		srcs ./root/
- ---> Using cache
- ---> 96e89379b905
+ ---> 982b8514b54b
 Step 4/6 : WORKDIR		/root/
- ---> Using cache
- ---> 87ed439ca87f
+ ---> Running in 2aaf6395d5b7
+Removing intermediate container 2aaf6395d5b7
+ ---> d99715c5474c
 Step 5/6 : EXPOSE		5000
- ---> Using cache
- ---> b801b2aa59c4
+ ---> Running in 0804a54ddaf5
+Removing intermediate container 0804a54ddaf5
+ ---> 40738e7c9580
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> 88cf2be8eb5d
-Successfully built 88cf2be8eb5d
+ ---> Running in 68c9248cd0d3
+Removing intermediate container 68c9248cd0d3
+ ---> 13d91b4bed3f
+Successfully built 13d91b4bed3f
 Successfully tagged phpmyadmin:latest

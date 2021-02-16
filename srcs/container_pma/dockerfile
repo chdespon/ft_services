@@ -27,7 +27,8 @@ RUN			apk update && apk add	nginx \
 									php7-gettext \
 									php7-ldap \
 									php7-ctype \
-									php7-dom
+									php7-dom \
+									telegraf 
 
 COPY		srcs ./root/
 
