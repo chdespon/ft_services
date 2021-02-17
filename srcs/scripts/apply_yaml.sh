@@ -7,3 +7,4 @@ kubectl apply -f srcs/container_mysql/mysql.yaml
 kubectl apply -f srcs/container_FTPS/FTPS.yaml
 kubectl apply -f srcs/container_grafana/grafana.yaml
 kubectl apply -f srcs/container_influxdb/influxdb.yaml
+kubectl apply -f srcs/container_telegraf/telegraf.yaml

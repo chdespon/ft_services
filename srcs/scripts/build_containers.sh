@@ -7,3 +7,4 @@ docker build ./srcs/container_mysql/ -t mysql > ~/ft_services/logs/mysql_logs.lo
 docker build ./srcs/container_FTPS/ -t ftps > ~/ft_services/logs/ftps_logs.log
 docker build ./srcs/container_grafana/ -t grafana > ~/ft_services/logs/grafana_logs.log
 docker build ./srcs/container_influxdb/ -t influxdb > ~/ft_services/logs/influxdb_logs.log
+docker build ./srcs/container_telegraf/ -t telegraf > ~/ft_services/logs/telegraf_logs.log
