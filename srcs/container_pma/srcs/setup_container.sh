@@ -1,6 +1,5 @@
 #! /bin/sh
 
-
 cp	nginx.conf /etc/nginx/
 
 mkdir /run/nginx

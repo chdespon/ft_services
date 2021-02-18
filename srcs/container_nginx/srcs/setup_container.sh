@@ -10,4 +10,6 @@ chmod +x mkcert
 ./mkcert localhost
 cd ..
 
-nginx -g "daemon off;"
+nginx
+
+tail -f /dev/null

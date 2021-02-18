@@ -5,19 +5,239 @@ Step 2/7 : RUN			apk update && apk add	build-base
  ---> Using cache
  ---> e173c432f3cc
 Step 3/7 : COPY		srcs ./root/
- ---> Using cache
- ---> a9b342663dee
+ ---> 8eebdc691978
 Step 4/7 : WORKDIR		/root/
- ---> Using cache
- ---> 330ab5aef2d3
+ ---> Running in 3edc156713fb
+Removing intermediate container 3edc156713fb
+ ---> d9fd1f548d97
 Step 5/7 : RUN			wget https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.49.tar.gz; 			tar zxvf pure-ftpd-1.0.49.tar.gz; 			rm pure-ftpd-1.0.49.tar.gz; 			mv pure-ftpd-1.0.49 pure-ftpd
- ---> Using cache
- ---> d9b43b126986
+ ---> Running in 8598037c2470
+[91mConnecting to download.pureftpd.org (37.59.238.213:443)
+[0m[91msaving to 'pure-ftpd-1.0.49.tar.gz'
+[0m[91mpure-ftpd-1.0.49.tar 100% |********************************|  595k  0:00:00 ETA
+'pure-ftpd-1.0.49.tar.gz' saved
+[0mpure-ftpd-1.0.49/
+pure-ftpd-1.0.49/README.MacOS-X
+pure-ftpd-1.0.49/man/
+pure-ftpd-1.0.49/pure-ftpd.png
+pure-ftpd-1.0.49/Makefile.gui
+pure-ftpd-1.0.49/README.TLS
+pure-ftpd-1.0.49/install-sh
+pure-ftpd-1.0.49/configure.ac
+pure-ftpd-1.0.49/INSTALL
+pure-ftpd-1.0.49/pureftpd-ldap.conf
+pure-ftpd-1.0.49/README.Windows
+pure-ftpd-1.0.49/configure
+pure-ftpd-1.0.49/ChangeLog
+pure-ftpd-1.0.49/AUTHORS
+pure-ftpd-1.0.49/puredb/
+pure-ftpd-1.0.49/FAQ
+pure-ftpd-1.0.49/pureftpd-pgsql.conf
+pure-ftpd-1.0.49/README.LDAP
+pure-ftpd-1.0.49/config.h.in
+pure-ftpd-1.0.49/depcomp
+pure-ftpd-1.0.49/missing
+pure-ftpd-1.0.49/pam/
+pure-ftpd-1.0.49/README
+pure-ftpd-1.0.49/Makefile.am
+pure-ftpd-1.0.49/README.PGSQL
+pure-ftpd-1.0.49/README.MySQL
+pure-ftpd-1.0.49/COPYING
+pure-ftpd-1.0.49/compile
+pure-ftpd-1.0.49/NEWS
+pure-ftpd-1.0.49/README.Donations
+pure-ftpd-1.0.49/pure-ftpd.conf.in
+pure-ftpd-1.0.49/pure-ftpd.conf
+pure-ftpd-1.0.49/gui/
+pure-ftpd-1.0.49/HISTORY
+pure-ftpd-1.0.49/pureftpd-mysql.conf
+pure-ftpd-1.0.49/m4/
+pure-ftpd-1.0.49/pureftpd.schema
+pure-ftpd-1.0.49/README.Configuration-File
+pure-ftpd-1.0.49/THANKS
+pure-ftpd-1.0.49/README.Virtual-Users
+pure-ftpd-1.0.49/Makefile.in
+pure-ftpd-1.0.49/aclocal.m4
+pure-ftpd-1.0.49/README.Authentication-Modules
+pure-ftpd-1.0.49/src/
+pure-ftpd-1.0.49/src/log_pgsql.c
+pure-ftpd-1.0.49/src/simpleconf.c
+pure-ftpd-1.0.49/src/pure-authd_p.h
+pure-ftpd-1.0.49/src/diraliases.h
+pure-ftpd-1.0.49/src/utils.h
+pure-ftpd-1.0.49/src/quotas.h
+pure-ftpd-1.0.49/src/simpleconf_ftpd.h
+pure-ftpd-1.0.49/src/log_mysql_p.h
+pure-ftpd-1.0.49/src/privsep.c
+pure-ftpd-1.0.49/src/upload-pipe.h
+pure-ftpd-1.0.49/src/caps.h
+pure-ftpd-1.0.49/src/messages_zh_tw.h
+pure-ftpd-1.0.49/src/ftp_parser.c
+pure-ftpd-1.0.49/src/messages.h
+pure-ftpd-1.0.49/src/caps_p.h
+pure-ftpd-1.0.49/src/daemons.c
+pure-ftpd-1.0.49/src/ftpwho-update.h
+pure-ftpd-1.0.49/src/tls_extcert.c
+pure-ftpd-1.0.49/src/tls.h
+pure-ftpd-1.0.49/src/log_pam.h
+pure-ftpd-1.0.49/src/messages_sv.h
+pure-ftpd-1.0.49/src/ls.c
+pure-ftpd-1.0.49/src/altlog.c
+pure-ftpd-1.0.49/src/log_puredb.c
+pure-ftpd-1.0.49/src/pure-pw.h
+pure-ftpd-1.0.49/src/getloadavg.h
+pure-ftpd-1.0.49/src/bsd-realpath.c
+pure-ftpd-1.0.49/src/pure-statsdecode.c
+pure-ftpd-1.0.49/src/mysnprintf.h
+pure-ftpd-1.0.49/src/ftpd_p.h
+pure-ftpd-1.0.49/src/messages_kr.h
+pure-ftpd-1.0.49/src/log_unix.h
+pure-ftpd-1.0.49/src/pure-certd.c
+pure-ftpd-1.0.49/src/pure-uploadscript.c
+pure-ftpd-1.0.49/src/parser.h
+pure-ftpd-1.0.49/src/fakechroot.h
+pure-ftpd-1.0.49/src/log_mysql.c
+pure-ftpd-1.0.49/src/ftpwho-read.c
+pure-ftpd-1.0.49/src/messages_ru.h
+pure-ftpd-1.0.49/src/ptracetest.c
+pure-ftpd-1.0.49/src/bsd-getopt_long.h
+pure-ftpd-1.0.49/src/pure-uploadscript_p.h
+pure-ftpd-1.0.49/src/ftpd.h
+pure-ftpd-1.0.49/src/ipstack.h
+pure-ftpd-1.0.49/src/messages_en.h
+pure-ftpd-1.0.49/src/crypto-sha1.c
+pure-ftpd-1.0.49/src/dynamic.h
+pure-ftpd-1.0.49/src/log_pgsql_p.h
+pure-ftpd-1.0.49/src/pure-ftpwho.c
+pure-ftpd-1.0.49/src/safe_rw.h
+pure-ftpd-1.0.49/src/messages_pl.h
+pure-ftpd-1.0.49/src/privsep_p.h
+pure-ftpd-1.0.49/src/crypto-md5.h
+pure-ftpd-1.0.49/src/syslognames.h
+pure-ftpd-1.0.49/src/log_extauth.c
+pure-ftpd-1.0.49/src/bsd-glob.c
+pure-ftpd-1.0.49/src/alt_arc4random.c
+pure-ftpd-1.0.49/src/globals.h
+pure-ftpd-1.0.49/src/fakesnprintf.c
+pure-ftpd-1.0.49/src/bonjour.c
+pure-ftpd-1.0.49/src/log_ldap.c
+pure-ftpd-1.0.49/src/pure-quotacheck.c
+pure-ftpd-1.0.49/src/pure-mrtginfo.c
+pure-ftpd-1.0.49/src/messages_it.h
+pure-ftpd-1.0.49/src/crypto.h
+pure-ftpd-1.0.49/src/messages_sq.h
+pure-ftpd-1.0.49/src/tls_extcert_p.h
+pure-ftpd-1.0.49/src/Makefile.am
+pure-ftpd-1.0.49/src/quotas.c
+pure-ftpd-1.0.49/src/upload-pipe.c
+pure-ftpd-1.0.49/src/caps.c
+pure-ftpd-1.0.49/src/messages_fr.h
+pure-ftpd-1.0.49/src/privsep.h
+pure-ftpd-1.0.49/src/messages_hu.h
+pure-ftpd-1.0.49/src/diraliases.c
+pure-ftpd-1.0.49/src/utils.c
+pure-ftpd-1.0.49/src/pure-certd_p.h
+pure-ftpd-1.0.49/src/simpleconf.h
+pure-ftpd-1.0.49/src/main.c
+pure-ftpd-1.0.49/src/log_pgsql.h
+pure-ftpd-1.0.49/src/ftpwho-update_p.h
+pure-ftpd-1.0.49/src/messages_zh_cn.h
+pure-ftpd-1.0.49/src/log_unix.c
+pure-ftpd-1.0.49/src/messages_nl.h
+pure-ftpd-1.0.49/src/bsd-realpath.h
+pure-ftpd-1.0.49/src/getloadavg.c
+pure-ftpd-1.0.49/src/messages_es.h
+pure-ftpd-1.0.49/src/pure-pw.c
+pure-ftpd-1.0.49/src/mysnprintf.c
+pure-ftpd-1.0.49/src/messages_de.h
+pure-ftpd-1.0.49/src/messages_da.h
+pure-ftpd-1.0.49/src/log_pam.c
+pure-ftpd-1.0.49/src/log_puredb.h
+pure-ftpd-1.0.49/src/altlog.h
+pure-ftpd-1.0.49/src/log_ldap_p.h
+pure-ftpd-1.0.49/src/tls_extcert.h
+pure-ftpd-1.0.49/src/tls.c
+pure-ftpd-1.0.49/src/ftpwho-update.c
+pure-ftpd-1.0.49/src/ftpd.c
+pure-ftpd-1.0.49/src/messages_tr.h
+pure-ftpd-1.0.49/src/crypto-sha1.h
+pure-ftpd-1.0.49/src/messages_pt_br.h
+pure-ftpd-1.0.49/src/ipstack.c
+pure-ftpd-1.0.49/src/ftpwho-read.h
+pure-ftpd-1.0.49/src/log_mysql.h
+pure-ftpd-1.0.49/src/pure-pwconvert.c
+pure-ftpd-1.0.49/src/bsd-getopt_long.c
+pure-ftpd-1.0.49/src/pure-authd.c
+pure-ftpd-1.0.49/src/fakechroot.c
+pure-ftpd-1.0.49/src/messages_cs_cz.h
+pure-ftpd-1.0.49/src/ls_p.h
+pure-ftpd-1.0.49/src/parser_p.h
+pure-ftpd-1.0.49/src/messages_sk.h
+pure-ftpd-1.0.49/src/parser.c
+pure-ftpd-1.0.49/src/crypto.c
+pure-ftpd-1.0.49/src/Makefile.in
+pure-ftpd-1.0.49/src/bonjour.h
+pure-ftpd-1.0.49/src/fakesnprintf.h
+pure-ftpd-1.0.49/src/alt_arc4random.h
+pure-ftpd-1.0.49/src/messages_fr_funny.h
+pure-ftpd-1.0.49/src/bsd-glob.h
+pure-ftpd-1.0.49/src/log_ldap.h
+pure-ftpd-1.0.49/src/messages_no.h
+pure-ftpd-1.0.49/src/crypto-md5.c
+pure-ftpd-1.0.49/src/messages_ro.h
+pure-ftpd-1.0.49/src/safe_rw.c
+pure-ftpd-1.0.49/src/log_extauth.h
+pure-ftpd-1.0.49/src/log_extauth_p.h
+pure-ftpd-1.0.49/src/dynamic.c
+pure-ftpd-1.0.49/m4/ax_check_link_flag.m4
+pure-ftpd-1.0.49/m4/ax_check_compile_flag.m4
+pure-ftpd-1.0.49/m4/Makefile.am
+pure-ftpd-1.0.49/m4/getloadavg.m4
+pure-ftpd-1.0.49/m4/Makefile.in
+pure-ftpd-1.0.49/gui/Makefile.am
+pure-ftpd-1.0.49/gui/build.sh
+pure-ftpd-1.0.49/gui/Makefile.in
+pure-ftpd-1.0.49/pam/pure-ftpd
+pure-ftpd-1.0.49/pam/README
+pure-ftpd-1.0.49/pam/Makefile.am
+pure-ftpd-1.0.49/pam/ftpusers
+pure-ftpd-1.0.49/pam/Makefile.in
+pure-ftpd-1.0.49/puredb/README.FIRST
+pure-ftpd-1.0.49/puredb/README
+pure-ftpd-1.0.49/puredb/Makefile.am
+pure-ftpd-1.0.49/puredb/Makefile.in
+pure-ftpd-1.0.49/puredb/src/
+pure-ftpd-1.0.49/puredb/src/puredb_write.c
+pure-ftpd-1.0.49/puredb/src/puredb_p.h
+pure-ftpd-1.0.49/puredb/src/puredb_read.h
+pure-ftpd-1.0.49/puredb/src/Makefile.am
+pure-ftpd-1.0.49/puredb/src/puredb_write.h
+pure-ftpd-1.0.49/puredb/src/example_read.c
+pure-ftpd-1.0.49/puredb/src/example_write.c
+pure-ftpd-1.0.49/puredb/src/regression.c
+pure-ftpd-1.0.49/puredb/src/Makefile.in
+pure-ftpd-1.0.49/puredb/src/puredb_read.c
+pure-ftpd-1.0.49/man/pure-ftpwho.8.in
+pure-ftpd-1.0.49/man/pure-uploadscript.8.in
+pure-ftpd-1.0.49/man/pure-quotacheck.8.in
+pure-ftpd-1.0.49/man/pure-ftpd.8.in
+pure-ftpd-1.0.49/man/pure-authd.8.in
+pure-ftpd-1.0.49/man/pure-mrtginfo.8.in
+pure-ftpd-1.0.49/man/pure-certd.8.in
+pure-ftpd-1.0.49/man/Makefile.am
+pure-ftpd-1.0.49/man/pure-pw.8.in
+pure-ftpd-1.0.49/man/pure-pwconvert.8.in
+pure-ftpd-1.0.49/man/Makefile.in
+pure-ftpd-1.0.49/man/pure-statsdecode.8.in
+Removing intermediate container 8598037c2470
+ ---> 840e93e88bcc
 Step 6/7 : EXPOSE		21 1024
- ---> Using cache
- ---> 406a799ede6f
+ ---> Running in e6ddf9589606
+Removing intermediate container e6ddf9589606
+ ---> 3db29620141e
 Step 7/7 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> c38fa84ed9e6
-Successfully built c38fa84ed9e6
+ ---> Running in 705f434a2562
+Removing intermediate container 705f434a2562
+ ---> 4e7e1693a94b
+Successfully built 4e7e1693a94b
 Successfully tagged ftps:latest

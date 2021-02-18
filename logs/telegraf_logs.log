@@ -5,14 +5,13 @@ Step 2/5 : RUN			apk update && apk add	telegraf
  ---> Using cache
  ---> 109e9b459f3c
 Step 3/5 : COPY		srcs ./root/
+ ---> Using cache
  ---> c430f18fbba1
 Step 4/5 : WORKDIR		/root/
- ---> Running in b69491602bf4
-Removing intermediate container b69491602bf4
+ ---> Using cache
  ---> 290f0e43c118
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in b777a177003b
-Removing intermediate container b777a177003b
+ ---> Using cache
  ---> 75df1995e49d
 Successfully built 75df1995e49d
 Successfully tagged telegraf:latest

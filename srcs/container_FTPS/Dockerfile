@@ -1,6 +1,7 @@
 FROM		alpine:latest
 
-RUN			apk update && apk add	build-base
+RUN			apk update && apk add	build-base \
+									openssl
 
 COPY		srcs ./root/
 
