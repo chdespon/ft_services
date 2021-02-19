@@ -3,18 +3,18 @@ Step 1/6 : FROM		alpine:latest
  ---> e50c909a8df2
 Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib
  ---> Using cache
- ---> 9f75f4b5bfba
+ ---> 31ff8be3ef63
 Step 3/6 : COPY		srcs ./root/
  ---> Using cache
- ---> df710291a771
+ ---> 33a670a23d0a
 Step 4/6 : WORKDIR		/root/
  ---> Using cache
- ---> 95a15460533a
+ ---> 78f996ead986
 Step 5/6 : EXPOSE		5050
  ---> Using cache
- ---> 940fa749c675
+ ---> b0f6c1695c30
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> 8cce8d4a17b5
-Successfully built 8cce8d4a17b5
+ ---> c6283674142c
+Successfully built c6283674142c
 Successfully tagged wordpress:latest

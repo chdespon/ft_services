@@ -3,18 +3,18 @@ Step 1/6 : FROM		alpine:latest
  ---> e50c909a8df2
 Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib 									php7-common 									php7-iconv 									php7-curl 									php7-xml 									php7-imap 									fcgi 									php7-pdo 									php7-pdo_mysql 									php7-soap 									php7-xmlrpc 									php7-posix 									php7-mcrypt 									php7-gettext 									php7-ldap 									php7-ctype 									php7-dom 									telegraf
  ---> Using cache
- ---> 9d66ec2e669a
+ ---> 8a20980f4aaf
 Step 3/6 : COPY		srcs ./root/
  ---> Using cache
- ---> 7fd15cd32387
+ ---> f7d6b37b49ac
 Step 4/6 : WORKDIR		/root/
  ---> Using cache
- ---> 7fce59829337
+ ---> c61c056bac00
 Step 5/6 : EXPOSE		5000
  ---> Using cache
- ---> c745cfad8486
+ ---> 00f15c37ebe7
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> 30d3fee8cb52
-Successfully built 30d3fee8cb52
+ ---> 8c53cc2cecff
+Successfully built 8c53cc2cecff
 Successfully tagged phpmyadmin:latest

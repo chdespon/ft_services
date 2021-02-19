@@ -3,15 +3,15 @@ Step 1/5 : FROM		alpine:latest
  ---> e50c909a8df2
 Step 2/5 : RUN			apk update && apk add	telegraf
  ---> Using cache
- ---> 109e9b459f3c
+ ---> 682a6243ffb2
 Step 3/5 : COPY		srcs ./root/
  ---> Using cache
- ---> c430f18fbba1
+ ---> 28e449ef8440
 Step 4/5 : WORKDIR		/root/
  ---> Using cache
- ---> 290f0e43c118
+ ---> 1e6f9c1265fd
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> 75df1995e49d
-Successfully built 75df1995e49d
+ ---> fae93349303d
+Successfully built fae93349303d
 Successfully tagged telegraf:latest
