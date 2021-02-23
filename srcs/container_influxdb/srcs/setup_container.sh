@@ -1,3 +1,3 @@
 #!/bin/sh
 
-influxd
+influxd -config /etc/influxdb.conf

@@ -1,16 +1,14 @@
 FROM		alpine:latest
 
 RUN			apk update && apk add	build-base \
-									openssl
+									openssl \
+									openssl-dev
 
 COPY		srcs ./root/
 
 WORKDIR		/root/
 
-RUN			wget https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-1.0.49.tar.gz; \
-			tar zxvf pure-ftpd-1.0.49.tar.gz; \
-			rm pure-ftpd-1.0.49.tar.gz; \
-			mv pure-ftpd-1.0.49 pure-ftpd
+RUN			apk add pure-ftpd --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache
 
 EXPOSE		21 1024
 

@@ -1,20 +1,20 @@
 Sending build context to Docker daemon  10.75kB
 Step 1/6 : FROM		alpine:latest
- ---> e50c909a8df2
+ ---> 28f6e2705743
 Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib
  ---> Using cache
- ---> 31ff8be3ef63
+ ---> a4ee7f0f88c4
 Step 3/6 : COPY		srcs ./root/
  ---> Using cache
- ---> 33a670a23d0a
+ ---> fb533320095b
 Step 4/6 : WORKDIR		/root/
  ---> Using cache
- ---> 78f996ead986
+ ---> d9ca38c014d8
 Step 5/6 : EXPOSE		5050
  ---> Using cache
- ---> b0f6c1695c30
+ ---> bdad3133715d
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> c6283674142c
-Successfully built c6283674142c
+ ---> 29e9620202a0
+Successfully built 29e9620202a0
 Successfully tagged wordpress:latest

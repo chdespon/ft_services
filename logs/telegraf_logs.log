@@ -1,17 +1,17 @@
 Sending build context to Docker daemon  8.192kB
 Step 1/5 : FROM		alpine:latest
- ---> e50c909a8df2
+ ---> 28f6e2705743
 Step 2/5 : RUN			apk update && apk add	telegraf
  ---> Using cache
- ---> 682a6243ffb2
+ ---> 5887eecdae78
 Step 3/5 : COPY		srcs ./root/
  ---> Using cache
- ---> 28e449ef8440
+ ---> c5696c8f272c
 Step 4/5 : WORKDIR		/root/
  ---> Using cache
- ---> 1e6f9c1265fd
+ ---> 2d5a6413b0cd
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> fae93349303d
-Successfully built fae93349303d
+ ---> 2d6767f65148
+Successfully built 2d6767f65148
 Successfully tagged telegraf:latest
