@@ -19,4 +19,20 @@ ln -s /usr/share/webapps/phpmyadmin/ /var/www/localhost/htdocs/phpmyadmin
 cd
 mv config.inc.php /var/www/localhost/htdocs/phpmyadmin
 
-nginx -g "daemon off;"
+nginx &
+
+ARE_RUNNING=0
+while [ $ARE_RUNNING -eq 0 ]
+do
+	sleep 5
+	ps aux | grep -v "grep" | grep "php-fpm7"
+	if [ $? -ne 0 ]
+	then
+		ARE_RUNNING=1
+	fi
+	ps aux | grep -v "grep" | grep "nginx"
+	if [ $? -ne 0 ]
+	then
+		ARE_RUNNING=1
+	fi
+done

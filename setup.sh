@@ -6,12 +6,10 @@ WHITE="\e[0m"
 
 if [ $(grep "docker" /etc/group | grep -c $USER ) = 0 ]
 then
+echo ${BLUE}"Password needed for restart to adding user to docker group"${WHITE}
 sudo usermod -aG docker $USER
 shutdown -r now
 fi
-# sudo groupadd docker
-
-# sudo usermod -aG docker $USER
 
 if [ $(minikube status | grep -c Running) != 3 ]
 then
@@ -24,11 +22,22 @@ kubectl apply -f srcs/metallb/metallb.yaml
 echo ${GREEN}"==Done==\n\n"${WHITE}
 fi
 
+#Install requirements for pure-ftpd.
+echo ${BLUE}"==Installing lftp.=="${WHITE}
+echo "user42" | sudo -S apt install lftp
+echo "user42" | sudo chmod 777 /etc/lftp.conf
+grep "set ssl:verify-certificate no" /etc/lftp.conf
+if [ $? -ne 0 ]
+then
+	echo "set ssl:verify-certificate no" >> /etc/lftp.conf
+fi
+echo ${GREEN}"==Done==\n\n"${WHITE}
+
 echo ${BLUE}"==Deleting Minikube instances=="${WHITE}
 sh srcs/scripts/delete_services.sh
 echo ${GREEN}"==Done==\n\n"${WHITE}
 
-# docker kill $(docker ps -q)
+#Set the environment variable to use local Docker (allows you to re-use the Docker daemon inside the Minikube instance).
 
 eval $(minikube -p minikube docker-env)
 

@@ -1,32 +1,31 @@
-Sending build context to Docker daemon  6.144kB
-Step 1/7 : FROM		alpine:latest
+Sending build context to Docker daemon  5.632kB
+Step 1/9 : FROM		alpine:latest
  ---> 28f6e2705743
-Step 2/7 : RUN			apk update && apk add	build-base 									openssl 									openssl-dev
+Step 2/9 : RUN			apk update
  ---> Using cache
- ---> 1be5adb4e18f
-Step 3/7 : COPY		srcs ./root/
+ ---> 127ea791e0ca
+Step 3/9 : RUN			apk add build-base
  ---> Using cache
- ---> 6493b6b68150
-Step 4/7 : WORKDIR		/root/
+ ---> b2dc223247ff
+Step 4/9 : RUN			apk add openssl openssl-dev
  ---> Using cache
- ---> 7bd56c16f9cf
-Step 5/7 : RUN			apk add pure-ftpd --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache
- ---> Running in dd1022df8990
-fetch http://dl-3.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
-fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
-fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
-(1/1) Installing pure-ftpd (1.0.49-r1)
-Executing busybox-1.32.1-r3.trigger
-OK: 198 MiB in 38 packages
-Removing intermediate container dd1022df8990
- ---> d67149aa2733
-Step 6/7 : EXPOSE		21 1024
- ---> Running in e6f59f43f921
-Removing intermediate container e6f59f43f921
- ---> cafc2076239f
-Step 7/7 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in ab76dcfe28bf
-Removing intermediate container ab76dcfe28bf
- ---> 5002d244907f
-Successfully built 5002d244907f
+ ---> 3dca5202d7c3
+Step 5/9 : RUN			apk add pure-ftpd --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache
+ ---> Using cache
+ ---> 4a9fdf7338d2
+Step 6/9 : COPY		srcs /root
+ ---> 35d9be5ea8e4
+Step 7/9 : WORKDIR		/root/
+ ---> Running in e07c62942ebf
+Removing intermediate container e07c62942ebf
+ ---> 5fa55e24fcf1
+Step 8/9 : EXPOSE		21 1024
+ ---> Running in 0caca3e3f275
+Removing intermediate container 0caca3e3f275
+ ---> 45e1b6d87b95
+Step 9/9 : ENTRYPOINT	["sh", "setup_container.sh"]
+ ---> Running in c1124eb4cfa4
+Removing intermediate container c1124eb4cfa4
+ ---> 8c7332b41e11
+Successfully built 8c7332b41e11
 Successfully tagged ftps:latest

@@ -6,15 +6,15 @@ Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 			
  ---> 3991e8c720de
 Step 3/6 : COPY		srcs ./root/
  ---> Using cache
- ---> 2c96d9d8bb50
+ ---> ca1f5c6a7886
 Step 4/6 : WORKDIR		/root/
  ---> Using cache
- ---> cce52371bd88
+ ---> 47538bbd1d66
 Step 5/6 : EXPOSE		5000
  ---> Using cache
- ---> e417d1f0b8ad
+ ---> 41e25328cb98
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> cff595cc3e77
-Successfully built cff595cc3e77
+ ---> 3087d6a0ae19
+Successfully built 3087d6a0ae19
 Successfully tagged phpmyadmin:latest

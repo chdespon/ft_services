@@ -19,6 +19,20 @@ chmod 600 /etc/ssl/private/*.pem
 adduser -D "admin"
 echo "admin:admin" | chpasswd
 
+#Run pure-ftpd in background. For some reasons, if it runs in
+#foreground, telegraf stops getting metrics from ftps-container.
+#-p : use only this port range for passive mode.
+#-P : force the specified IP.
+#-j : create home directory if needed.
 pure-ftpd -j -Y 2 -p 1024:1024 -P 172.17.0.2 &
 
-tail -f /dev/null
+IS_RUNNING=0
+while [ $IS_RUNNING -eq 0 ]
+do
+	sleep 5
+	ps aux | grep -v "grep" | grep "pure-ftpd"
+	if [ $? -ne 0 ]
+	then
+		IS_RUNNING=1
+	fi
+done

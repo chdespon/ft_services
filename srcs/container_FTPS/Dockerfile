@@ -1,14 +1,16 @@
 FROM		alpine:latest
 
-RUN			apk update && apk add	build-base \
-									openssl \
-									openssl-dev
+RUN			apk update
 
-COPY		srcs ./root/
+RUN			apk add build-base
 
-WORKDIR		/root/
+RUN			apk add openssl openssl-dev
 
 RUN			apk add pure-ftpd --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache
+
+COPY		srcs /root
+
+WORKDIR		/root/
 
 EXPOSE		21 1024
 

@@ -18,4 +18,20 @@ ln -s /usr/share/webapps/wordpress/ /var/www/localhost/htdocs/wordpress
 cd
 mv /root/wp-config.php /var/www/localhost/htdocs/wordpress
 
-nginx -g "daemon off;"
+nginx &
+
+ARE_RUNNING=0
+while [ $ARE_RUNNING -eq 0 ]
+do
+	sleep 5
+	ps aux | grep -v "grep" | grep "php-fpm7"
+	if [ $? -ne 0 ]
+	then
+		ARE_RUNNING=1
+	fi
+	ps aux | grep -v "grep" | grep "nginx"
+	if [ $? -ne 0 ]
+	then
+		ARE_RUNNING=1
+	fi
+done

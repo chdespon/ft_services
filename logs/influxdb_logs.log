@@ -6,15 +6,15 @@ Step 2/6 : RUN			apk update && apk	add influxdb 								ca-certificates
  ---> d7d81ff2610d
 Step 3/6 : COPY		srcs ./root
  ---> Using cache
- ---> 64d731aacc00
+ ---> 104bce768cb4
 Step 4/6 : WORKDIR		/root/
  ---> Using cache
- ---> 8af2fd910fec
+ ---> 9ccc4d3ec4e3
 Step 5/6 : EXPOSE		8086
  ---> Using cache
- ---> bab8bd2e51bb
+ ---> 4652b35fb996
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> d7a9f4e28120
-Successfully built d7a9f4e28120
+ ---> 2b824695bdd4
+Successfully built 2b824695bdd4
 Successfully tagged influxdb:latest

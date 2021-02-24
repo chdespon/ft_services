@@ -10,6 +10,15 @@ chmod +x mkcert
 ./mkcert localhost
 cd ..
 
-nginx
+nginx &
 
-tail -f /dev/null
+IS_RUNNING=0
+while [ $IS_RUNNING -eq 0 ]
+do
+	sleep 5
+	ps aux | grep -v "grep" | grep "nginx"
+	if [ $? -ne 0 ]
+	then
+		IS_RUNNING=1
+	fi
+done
