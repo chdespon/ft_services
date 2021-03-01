@@ -3,15 +3,15 @@ Step 1/5 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/5 : RUN			apk update && apk add 	mysql 									mysql-client
  ---> Using cache
- ---> b51b93109379
+ ---> d738b04869ac
 Step 3/5 : COPY		srcs ./root/
  ---> Using cache
- ---> 560456d0f186
+ ---> 253822513b12
 Step 4/5 : WORKDIR		/root/
  ---> Using cache
- ---> b982520151d5
+ ---> 26f64cd75706
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
  ---> Using cache
- ---> c4d646db5bd6
-Successfully built c4d646db5bd6
+ ---> 25db034e29cb
+Successfully built 25db034e29cb
 Successfully tagged mysql:latest
