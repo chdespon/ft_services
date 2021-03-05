@@ -2,19 +2,33 @@ Sending build context to Docker daemon   5.12kB
 Step 1/6 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/6 : RUN			apk update && apk	add influxdb 								ca-certificates
- ---> Using cache
- ---> d7d81ff2610d
+ ---> Running in f6441127220e
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
+v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13877 distinct packages available
+(1/2) Installing ca-certificates (20191127-r5)
+(2/2) Installing influxdb (1.8.3-r2)
+Executing influxdb-1.8.3-r2.pre-install
+Executing busybox-1.32.1-r3.trigger
+Executing ca-certificates-20191127-r5.trigger
+OK: 206 MiB in 16 packages
+Removing intermediate container f6441127220e
+ ---> 4ab767a638f4
 Step 3/6 : COPY		srcs ./root
- ---> Using cache
- ---> 104bce768cb4
+ ---> cde76b015cce
 Step 4/6 : WORKDIR		/root/
- ---> Using cache
- ---> 9ccc4d3ec4e3
+ ---> Running in 94db3f81dfd7
+Removing intermediate container 94db3f81dfd7
+ ---> 7ab6ea9092ad
 Step 5/6 : EXPOSE		8086
- ---> Using cache
- ---> 4652b35fb996
+ ---> Running in edb7ad9c4faa
+Removing intermediate container edb7ad9c4faa
+ ---> 70a3496bf655
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> 2b824695bdd4
-Successfully built 2b824695bdd4
+ ---> Running in b0d596c9af23
+Removing intermediate container b0d596c9af23
+ ---> 9e1f11715e83
+Successfully built 9e1f11715e83
 Successfully tagged influxdb:latest

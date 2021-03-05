@@ -2,16 +2,45 @@ Sending build context to Docker daemon  54.27kB
 Step 1/5 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/5 : RUN			apk update && apk add 	mysql 									mysql-client
- ---> Using cache
- ---> d738b04869ac
+ ---> Running in 0995c436dfc7
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
+v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13877 distinct packages available
+(1/18) Installing mariadb-common (10.5.8-r0)
+(2/18) Installing libaio (0.3.112-r1)
+(3/18) Installing ca-certificates (20191127-r5)
+(4/18) Installing brotli-libs (1.0.9-r3)
+(5/18) Installing nghttp2-libs (1.42.0-r1)
+(6/18) Installing libcurl (7.74.0-r1)
+(7/18) Installing libgcc (10.2.1_pre1-r3)
+(8/18) Installing xz-libs (5.2.5-r0)
+(9/18) Installing ncurses-terminfo-base (6.2_p20210109-r0)
+(10/18) Installing ncurses-libs (6.2_p20210109-r0)
+(11/18) Installing linux-pam (1.5.1-r0)
+(12/18) Installing pcre2 (10.36-r0)
+(13/18) Installing libstdc++ (10.2.1_pre1-r3)
+(14/18) Installing libxml2 (2.9.10-r6)
+(15/18) Installing mariadb (10.5.8-r0)
+Executing mariadb-10.5.8-r0.pre-install
+(16/18) Installing mysql (10.5.8-r0)
+(17/18) Installing mariadb-client (10.5.8-r0)
+(18/18) Installing mysql-client (10.5.8-r0)
+Executing busybox-1.32.1-r3.trigger
+Executing ca-certificates-20191127-r5.trigger
+OK: 178 MiB in 32 packages
+Removing intermediate container 0995c436dfc7
+ ---> 22b05e0d7a61
 Step 3/5 : COPY		srcs ./root/
- ---> Using cache
- ---> 253822513b12
+ ---> 815cd60e6820
 Step 4/5 : WORKDIR		/root/
- ---> Using cache
- ---> 26f64cd75706
+ ---> Running in 38184eae4953
+Removing intermediate container 38184eae4953
+ ---> 037959e84f7b
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> 25db034e29cb
-Successfully built 25db034e29cb
+ ---> Running in 38e77bc30739
+Removing intermediate container 38e77bc30739
+ ---> 337150ffb00d
+Successfully built 337150ffb00d
 Successfully tagged mysql:latest

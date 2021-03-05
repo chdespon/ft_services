@@ -6,20 +6,10 @@ WHITE="\e[0m"
 
 if [ $(grep "docker" /etc/group | grep -c $USER ) = 0 ]
 then
-echo ${BLUE}"Password needed for restart to adding user to docker group"${WHITE}
-sudo usermod -aG docker $USER
-shutdown -r now
-fi
-
-if [ $(minikube status | grep -c Running) != 3 ]
-then
-echo ${BLUE}"==Starting Minikube=="${WHITE}
-minikube start --driver=docker
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
-kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
-kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
-kubectl apply -f srcs/metallb/metallb.yaml
-echo ${GREEN}"==Done==\n\n"${WHITE}
+	echo ${BLUE}"Password needed for restart to adding user to docker group"${WHITE}
+	sudo usermod -aG docker $USER
+	sudo shutdown -r now
+	sleep 30
 fi
 
 #Install requirements for pure-ftpd.
@@ -32,6 +22,17 @@ then
 	echo "set ssl:verify-certificate no" >> /etc/lftp.conf
 fi
 echo ${GREEN}"==Done==\n\n"${WHITE}
+
+if [ $(minikube status | grep -c Running) != 3 ]
+then
+	echo ${BLUE}"==Starting Minikube=="${WHITE}
+	minikube start --driver=docker
+	kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+	kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+	kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+	kubectl apply -f srcs/metallb/metallb.yaml
+	echo ${GREEN}"==Done==\n\n"${WHITE}
+fi
 
 echo ${BLUE}"==Deleting Minikube instances=="${WHITE}
 sh srcs/scripts/delete_services.sh

@@ -2,19 +2,33 @@ Sending build context to Docker daemon  4.832MB
 Step 1/6 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/6 : RUN			apk update && apk add nginx
- ---> Using cache
- ---> 1021f8da44ba
+ ---> Running in 9adbcfc395f3
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
+v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13877 distinct packages available
+(1/2) Installing pcre (8.44-r0)
+(2/2) Installing nginx (1.18.0-r13)
+Executing nginx-1.18.0-r13.pre-install
+Executing nginx-1.18.0-r13.post-install
+Executing busybox-1.32.1-r3.trigger
+OK: 7 MiB in 16 packages
+Removing intermediate container 9adbcfc395f3
+ ---> e40564a60b5c
 Step 3/6 : COPY		srcs ./root/
- ---> Using cache
- ---> d5be3af40edc
+ ---> 31cf0141f9d4
 Step 4/6 : WORKDIR		/root/
- ---> Using cache
- ---> 1b26508dce11
+ ---> Running in 05ac07776bee
+Removing intermediate container 05ac07776bee
+ ---> 993044dc3555
 Step 5/6 : EXPOSE		80 443
- ---> Using cache
- ---> dbec578353ab
+ ---> Running in 0f63372728d6
+Removing intermediate container 0f63372728d6
+ ---> b933e5421a77
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> a873443aa8a9
-Successfully built a873443aa8a9
+ ---> Running in 963ef8c02d33
+Removing intermediate container 963ef8c02d33
+ ---> e604f2144eff
+Successfully built e604f2144eff
 Successfully tagged nginx:latest

@@ -2,16 +2,27 @@ Sending build context to Docker daemon  8.192kB
 Step 1/5 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/5 : RUN			apk update && apk add	telegraf
- ---> Using cache
- ---> 5887eecdae78
+ ---> Running in 6eb7b714e042
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
+v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13877 distinct packages available
+(1/1) Installing telegraf (1.17.0-r0)
+Executing telegraf-1.17.0-r0.pre-install
+Executing busybox-1.32.1-r3.trigger
+OK: 95 MiB in 15 packages
+Removing intermediate container 6eb7b714e042
+ ---> e862c137340b
 Step 3/5 : COPY		srcs ./root/
- ---> Using cache
- ---> c5696c8f272c
+ ---> 506fbc5cf538
 Step 4/5 : WORKDIR		/root/
- ---> Using cache
- ---> 2d5a6413b0cd
+ ---> Running in 9a1d393d8e92
+Removing intermediate container 9a1d393d8e92
+ ---> 20c90aede713
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Using cache
- ---> 2d6767f65148
-Successfully built 2d6767f65148
+ ---> Running in 3ddf5faa7fec
+Removing intermediate container 3ddf5faa7fec
+ ---> 7fc16c7af445
+Successfully built 7fc16c7af445
 Successfully tagged telegraf:latest
