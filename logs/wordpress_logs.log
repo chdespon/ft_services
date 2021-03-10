@@ -9,12 +9,12 @@ Digest: sha256:a75afd8b57e7f34e4dad8d65e2c7ba2e1975c795ce1ee22fa34f8cf46f96a3be
 Status: Downloaded newer image for alpine:latest
  ---> 28f6e2705743
 Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib
- ---> Running in 6f8886d72df3
+ ---> Running in 859a96fe9a30
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
-v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
-v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
-OK: 13877 distinct packages available
+v3.13.2-66-g3837863e5e [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-67-gff294de1d2 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13878 distinct packages available
 (1/42) Installing pcre (8.44-r0)
 (2/42) Installing nginx (1.18.0-r13)
 Executing nginx-1.18.0-r13.pre-install
@@ -61,21 +61,21 @@ Executing nginx-1.18.0-r13.post-install
 (42/42) Installing wget (1.21.1-r1)
 Executing busybox-1.32.1-r3.trigger
 OK: 37 MiB in 56 packages
-Removing intermediate container 6f8886d72df3
- ---> bb9c3ef81a2b
+Removing intermediate container 859a96fe9a30
+ ---> ef6bf798f9b1
 Step 3/6 : COPY		srcs ./root/
- ---> 64b27625b494
+ ---> da98ebe438cb
 Step 4/6 : WORKDIR		/root/
- ---> Running in e97e06f86a13
-Removing intermediate container e97e06f86a13
- ---> 5d911ff9e288
+ ---> Running in 8ddf4139b324
+Removing intermediate container 8ddf4139b324
+ ---> d1c107e2f0dd
 Step 5/6 : EXPOSE		5050
- ---> Running in 1297a0d821f5
-Removing intermediate container 1297a0d821f5
- ---> 77d9701336fa
+ ---> Running in ec224ad0ac51
+Removing intermediate container ec224ad0ac51
+ ---> 492254ca0385
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in 28ac9a248ad4
-Removing intermediate container 28ac9a248ad4
- ---> ccac79f6145b
-Successfully built ccac79f6145b
+ ---> Running in 8f753e8ae94e
+Removing intermediate container 8f753e8ae94e
+ ---> 163d6c8766fe
+Successfully built 163d6c8766fe
 Successfully tagged wordpress:latest

@@ -2,16 +2,16 @@ Sending build context to Docker daemon  5.632kB
 Step 1/9 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/9 : RUN			apk update
- ---> Running in ee737c75fd51
+ ---> Running in 816b20ac9bc6
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
-v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
-v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
-OK: 13877 distinct packages available
-Removing intermediate container ee737c75fd51
- ---> 713b8c8522a2
+v3.13.2-66-g3837863e5e [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-67-gff294de1d2 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13878 distinct packages available
+Removing intermediate container 816b20ac9bc6
+ ---> 5e4c3057cc7e
 Step 3/9 : RUN			apk add build-base
- ---> Running in 5f8573e021d0
+ ---> Running in bb0b31b22103
 (1/20) Installing libgcc (10.2.1_pre1-r3)
 (2/20) Installing libstdc++ (10.2.1_pre1-r3)
 (3/20) Installing binutils (2.35.1-r1)
@@ -34,40 +34,40 @@ Step 3/9 : RUN			apk add build-base
 (20/20) Installing build-base (0.5-r2)
 Executing busybox-1.32.1-r3.trigger
 OK: 195 MiB in 34 packages
-Removing intermediate container 5f8573e021d0
- ---> a62ac0f4fdc9
+Removing intermediate container bb0b31b22103
+ ---> 381a56d2cf68
 Step 4/9 : RUN			apk add openssl openssl-dev
- ---> Running in c607d9749620
+ ---> Running in 3c11b78897e3
 (1/3) Installing openssl (1.1.1j-r0)
 (2/3) Installing pkgconf (1.7.3-r0)
 (3/3) Installing openssl-dev (1.1.1j-r0)
 Executing busybox-1.32.1-r3.trigger
 OK: 197 MiB in 37 packages
-Removing intermediate container c607d9749620
- ---> 7ee7b2d48793
+Removing intermediate container 3c11b78897e3
+ ---> 655703bedd16
 Step 5/9 : RUN			apk add pure-ftpd --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted --no-cache
- ---> Running in 6736444ac105
+ ---> Running in e3b0a384a35a
 fetch http://dl-3.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
 (1/1) Installing pure-ftpd (1.0.49-r2)
 Executing busybox-1.32.1-r3.trigger
 OK: 198 MiB in 38 packages
-Removing intermediate container 6736444ac105
- ---> ab44167a7911
+Removing intermediate container e3b0a384a35a
+ ---> 733582878446
 Step 6/9 : COPY		srcs /root
- ---> af23e1840d3f
+ ---> 2475fc43e488
 Step 7/9 : WORKDIR		/root/
- ---> Running in e27a3ed5cbd1
-Removing intermediate container e27a3ed5cbd1
- ---> 5abfc92603d6
+ ---> Running in b31e13934b9a
+Removing intermediate container b31e13934b9a
+ ---> b69c91eb796b
 Step 8/9 : EXPOSE		21 1024
- ---> Running in b09fc03b271f
-Removing intermediate container b09fc03b271f
- ---> 0e23212fa95f
+ ---> Running in 786e489cea8b
+Removing intermediate container 786e489cea8b
+ ---> c94d487ffb85
 Step 9/9 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in d4d85d76986b
-Removing intermediate container d4d85d76986b
- ---> 90e6e85dec6c
-Successfully built 90e6e85dec6c
+ ---> Running in 979170cdedef
+Removing intermediate container 979170cdedef
+ ---> 2114292f1d7d
+Successfully built 2114292f1d7d
 Successfully tagged ftps:latest

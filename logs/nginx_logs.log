@@ -2,33 +2,33 @@ Sending build context to Docker daemon  4.832MB
 Step 1/6 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/6 : RUN			apk update && apk add nginx
- ---> Running in 9adbcfc395f3
+ ---> Running in b3b2d902c019
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
-v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
-v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
-OK: 13877 distinct packages available
+v3.13.2-66-g3837863e5e [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-67-gff294de1d2 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13878 distinct packages available
 (1/2) Installing pcre (8.44-r0)
 (2/2) Installing nginx (1.18.0-r13)
 Executing nginx-1.18.0-r13.pre-install
 Executing nginx-1.18.0-r13.post-install
 Executing busybox-1.32.1-r3.trigger
 OK: 7 MiB in 16 packages
-Removing intermediate container 9adbcfc395f3
- ---> e40564a60b5c
+Removing intermediate container b3b2d902c019
+ ---> 7d797b4149fa
 Step 3/6 : COPY		srcs ./root/
- ---> 31cf0141f9d4
+ ---> 19f8308975cb
 Step 4/6 : WORKDIR		/root/
- ---> Running in 05ac07776bee
-Removing intermediate container 05ac07776bee
- ---> 993044dc3555
+ ---> Running in 7080e7041468
+Removing intermediate container 7080e7041468
+ ---> 9e7587bb7e9d
 Step 5/6 : EXPOSE		80 443
- ---> Running in 0f63372728d6
-Removing intermediate container 0f63372728d6
- ---> b933e5421a77
+ ---> Running in ae3f5d019b60
+Removing intermediate container ae3f5d019b60
+ ---> 374a9a2eef3e
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in 963ef8c02d33
-Removing intermediate container 963ef8c02d33
- ---> e604f2144eff
-Successfully built e604f2144eff
+ ---> Running in 46338b70e068
+Removing intermediate container 46338b70e068
+ ---> a974402c6ed4
+Successfully built a974402c6ed4
 Successfully tagged nginx:latest

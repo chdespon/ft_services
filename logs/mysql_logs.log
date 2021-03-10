@@ -2,12 +2,12 @@ Sending build context to Docker daemon  54.27kB
 Step 1/5 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/5 : RUN			apk update && apk add 	mysql 									mysql-client
- ---> Running in 0995c436dfc7
+ ---> Running in 2895a79c0654
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
-v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
-v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
-OK: 13877 distinct packages available
+v3.13.2-66-g3837863e5e [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-67-gff294de1d2 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13878 distinct packages available
 (1/18) Installing mariadb-common (10.5.8-r0)
 (2/18) Installing libaio (0.3.112-r1)
 (3/18) Installing ca-certificates (20191127-r5)
@@ -30,17 +30,17 @@ Executing mariadb-10.5.8-r0.pre-install
 Executing busybox-1.32.1-r3.trigger
 Executing ca-certificates-20191127-r5.trigger
 OK: 178 MiB in 32 packages
-Removing intermediate container 0995c436dfc7
- ---> 22b05e0d7a61
+Removing intermediate container 2895a79c0654
+ ---> 2375bc2c59de
 Step 3/5 : COPY		srcs ./root/
- ---> 815cd60e6820
+ ---> 03d1616f2c83
 Step 4/5 : WORKDIR		/root/
- ---> Running in 38184eae4953
-Removing intermediate container 38184eae4953
- ---> 037959e84f7b
+ ---> Running in 08ab66a04733
+Removing intermediate container 08ab66a04733
+ ---> 6e7dd1715df3
 Step 5/5 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in 38e77bc30739
-Removing intermediate container 38e77bc30739
- ---> 337150ffb00d
-Successfully built 337150ffb00d
+ ---> Running in d3dedaec887b
+Removing intermediate container d3dedaec887b
+ ---> 6e23284772ab
+Successfully built 6e23284772ab
 Successfully tagged mysql:latest

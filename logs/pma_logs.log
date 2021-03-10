@@ -2,12 +2,12 @@ Sending build context to Docker daemon   12.8kB
 Step 1/6 : FROM		alpine:latest
  ---> 28f6e2705743
 Step 2/6 : RUN			apk update && apk add	nginx 									wget 									php7-fpm 									php7-mysqli 									php7-json 									php7-cli 									php7-cgi 									php7-mbstring 									php7-opcache 									php7-gd 									php7-session 									php7-zlib 									php7-common 									php7-iconv 									php7-curl 									php7-xml 									php7-imap 									fcgi 									php7-pdo 									php7-pdo_mysql 									php7-soap 									php7-xmlrpc 									php7-posix 									php7-mcrypt 									php7-gettext 									php7-ldap 									php7-ctype 									php7-dom 									telegraf
- ---> Running in 930868d0753a
+ ---> Running in b8bc0c2a8e7f
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz
 fetch https://dl-cdn.alpinelinux.org/alpine/v3.13/community/x86_64/APKINDEX.tar.gz
-v3.13.2-58-ge3f19cedc6 [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
-v3.13.2-57-gb49ace1568 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
-OK: 13877 distinct packages available
+v3.13.2-66-g3837863e5e [https://dl-cdn.alpinelinux.org/alpine/v3.13/main]
+v3.13.2-67-gff294de1d2 [https://dl-cdn.alpinelinux.org/alpine/v3.13/community]
+OK: 13878 distinct packages available
 (1/67) Installing fcgi (2.4.2-r1)
 (2/67) Installing pcre (8.44-r0)
 (3/67) Installing nginx (1.18.0-r13)
@@ -81,21 +81,21 @@ Executing telegraf-1.17.0-r0.pre-install
 Executing busybox-1.32.1-r3.trigger
 Executing ca-certificates-20191127-r5.trigger
 OK: 131 MiB in 81 packages
-Removing intermediate container 930868d0753a
- ---> fe94a0fe7e00
+Removing intermediate container b8bc0c2a8e7f
+ ---> 133ea248f7c8
 Step 3/6 : COPY		srcs ./root/
- ---> 8b7bf9a4a26f
+ ---> 8a3a0d5bb895
 Step 4/6 : WORKDIR		/root/
- ---> Running in 7b8e7042d716
-Removing intermediate container 7b8e7042d716
- ---> 6fdb4765e9fa
+ ---> Running in e40bc48a6d8f
+Removing intermediate container e40bc48a6d8f
+ ---> a0d20e8c4176
 Step 5/6 : EXPOSE		5000
- ---> Running in 7d649c5e5079
-Removing intermediate container 7d649c5e5079
- ---> 28b1a23e5bf5
+ ---> Running in 67f7cc6b7429
+Removing intermediate container 67f7cc6b7429
+ ---> 8f613d3fbeff
 Step 6/6 : ENTRYPOINT	["sh", "setup_container.sh"]
- ---> Running in 0b1858ac2ad0
-Removing intermediate container 0b1858ac2ad0
- ---> 07c4d33400b2
-Successfully built 07c4d33400b2
+ ---> Running in 3a0c5d5ff704
+Removing intermediate container 3a0c5d5ff704
+ ---> ba637ac00944
+Successfully built ba637ac00944
 Successfully tagged phpmyadmin:latest
